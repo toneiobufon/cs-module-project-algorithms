@@ -4,7 +4,13 @@ Returns: an integer
 '''
 def eating_cookies(n):
     # Your code here
-
+    if n < 0:
+        return 0
+    elif n == 0:
+        return 1
+    else:
+        #we have to do a recursive call after eating a cookie to check how many cookies we have left
+        return eating_cookies(n-3) + eating_cookies(n-2) + eating_cookies(n-1)
     
 
 if __name__ == "__main__":
