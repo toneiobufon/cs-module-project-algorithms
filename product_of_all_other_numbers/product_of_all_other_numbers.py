@@ -1,11 +1,28 @@
 '''
 Input: a List of integers
 Returns: a List of integers
-'''
-def product_of_all_other_numbers(arr):
-    # Your code here
 
-    pass
+'''
+def multiply(*numbers):
+    x = 1
+    for n in numbers:
+        x *= n
+    return x
+
+
+def product_of_all_other_numbers(arr):
+
+    # Your code here
+   result = multiply(*arr)
+   print(result)
+    # loop over arr
+   for i in range(len(arr)):
+        # multiple i by next element
+        new_number = result// arr[i]
+        arr[i] = new_number
+
+   return arr
+
 
 
 if __name__ == '__main__':

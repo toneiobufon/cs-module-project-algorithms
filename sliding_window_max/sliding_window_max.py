@@ -3,9 +3,20 @@ Input: a List of integers as well as an integer `k` representing the size of the
 Returns: a List of integers
 '''
 def sliding_window_max(nums, k):
-    # Your code here
 
-    pass
+    # Your code here
+    right_pointer = k
+
+    for i in range(len(nums)):
+        if len(nums[i:right_pointer]) == k:
+            nums[i] = max(nums[i:right_pointer])
+            right_pointer += 1
+        else:
+            nums.pop()
+              
+    return nums
+
+    
 
 
 if __name__ == '__main__':

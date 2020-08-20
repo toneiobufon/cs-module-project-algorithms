@@ -4,8 +4,17 @@ Returns: an integer
 '''
 def single_number(arr):
     # Your code here
+    #check if any int is twice in the array, list, set
+    # if so remove one and leave one in the set
+    numbers = set() # creating a set limits the existence of any number to be unique
 
-    pass
+    for i in arr:
+        if i in numbers:
+            numbers.remove(i)
+        else:
+            numbers.add(i)
+
+    return list(numbers)[0]
 
 
 if __name__ == '__main__':
